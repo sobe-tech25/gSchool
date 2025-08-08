@@ -1,0 +1,60 @@
+<mat-sidenav-container class="sidebar-container">
+  <mat-sidenav 
+    [opened]="isOpen" 
+    mode="side" 
+    class="sidebar"
+    [style.width]="isOpen ? '280px' : '60px'">
+    
+    <div class="sidebar-content">
+      <!-- User Profile Section -->
+      <div class="user-profile" [class.collapsed]="!isOpen">
+        <div class="user-avatar">
+          <img [src]="userInfo.avatar" [alt]="userInfo.name" class="avatar-img">
+        </div>
+        <div class="user-info" *ngIf="isOpen">
+          <h4 class="user-name">{{ userInfo.name }}</h4>
+        </div>
+      </div>
+
+      <!-- Navigation Menu -->
+      <nav class="sidebar-nav">
+        <mat-accordion class="menu-accordion" multi>
+          <mat-expansion-panel 
+            *ngFor="let item of menuItems" 
+            class="menu-panel"
+            [expanded]="item.label === 'HOME'"
+            hideToggle>
+            
+            <mat-expansion-panel-header class="menu-header">
+              <mat-panel-title class="menu-title">
+                <mat-icon class="menu-icon">{{ item.icon }}</mat-icon>
+                <span class="menu-label" *ngIf="isOpen">{{ item.label }}</span>
+              </mat-panel-title>
+            </mat-expansion-panel-header>
+
+            <div class="submenu" *ngIf="item.children && isOpen">
+              <a 
+                *ngFor="let child of item.children"
+                [routerLink]="child.route"
+                routerLinkActive="active"
+                class="submenu-item">
+                <mat-icon class="submenu-icon">{{ child.icon }}</mat-icon>
+                <span class="submenu-label">{{ child.label }}</span>
+                <span 
+                  *ngIf="child.badge" 
+                  class="badge"
+                  [class.badge-warn]="child.badgeColor === 'warn'">
+                  {{ child.badge }}
+                </span>
+              </a>
+            </div>
+          </mat-expansion-panel>
+        </mat-accordion>
+      </nav>
+    </div>
+  </mat-sidenav>
+
+  <mat-sidenav-content class="main-content">
+    <ng-content></ng-content>
+  </mat-sidenav-content>
+</mat-sidenav-container>

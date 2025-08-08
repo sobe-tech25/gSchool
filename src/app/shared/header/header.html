@@ -1,0 +1,60 @@
+<mat-toolbar class="header-toolbar">
+  <div class="header-left">
+    <button mat-icon-button (click)="onToggleSidebar()" class="menu-button">
+      <mat-icon>menu</mat-icon>
+    </button>
+    
+    <div class="logo">
+      <mat-icon class="logo-icon">flight_takeoff</mat-icon>
+      <span class="logo-text">MATERIALPRO</span>
+    </div>
+  </div>
+
+  <div class="header-center">
+    <button mat-icon-button class="search-button">
+      <mat-icon>search</mat-icon>
+    </button>
+    <button mat-icon-button>
+      <mat-icon>apps</mat-icon>
+    </button>
+  </div>
+
+  <div class="header-right">
+    <button mat-icon-button class="flag-button">
+      <img src="https://flagcdn.com/w20/gb.png" alt="English" class="flag-icon">
+    </button>
+    
+    <button mat-icon-button class="theme-toggle">
+      <mat-icon>dark_mode</mat-icon>
+    </button>
+    
+    <button mat-icon-button [matBadge]="3" matBadgeColor="warn" class="notification-button">
+      <mat-icon>notifications</mat-icon>
+    </button>
+    
+    <button mat-icon-button>
+      <mat-icon>message</mat-icon>
+    </button>
+    
+    <button mat-button [matMenuTriggerFor]="userMenu" class="user-button">
+      <div class="user-avatar">
+        <img src="https://images.pexels.com/photos/1239291/pexels-photo-1239291.jpeg?auto=compress&cs=tinysrgb&w=40&h=40&dpr=1" alt="User" class="avatar-img">
+      </div>
+    </button>
+    
+    <mat-menu #userMenu="matMenu">
+      <button mat-menu-item>
+        <mat-icon>person</mat-icon>
+        <span>Profile</span>
+      </button>
+      <button mat-menu-item>
+        <mat-icon>settings</mat-icon>
+        <span>Settings</span>
+      </button>
+      <button mat-menu-item>
+        <mat-icon>logout</mat-icon>
+        <span>Logout</span>
+      </button>
+    </mat-menu>
+  </div>
+</mat-toolbar>
