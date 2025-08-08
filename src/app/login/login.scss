@@ -1,0 +1,33 @@
+.login-container {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(to bottom right, #3f51b5, #2196f3);
+}
+
+.login-card {
+  padding: 2rem;
+  width: 100%;
+  max-width: 400px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+  background: white;
+  border-radius: 8px;
+}
+
+.full-width {
+  width: 100%;
+  margin-top: 1rem;
+}
+
+.text-center {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.langbtn {
+  width: 150px;
+}
+.toggle {
+flex: 1;
+}

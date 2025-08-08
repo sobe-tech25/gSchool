@@ -1,0 +1,10 @@
+{
+  "login": "Se connecter",
+  "langue":"Français",
+   "email":"Adresse mail",
+  "password": "Mot de pass",
+  "email.is.required":"Adresse mail obligatoir",
+  "password.is.required": "Mot de pass est obligatoir",
+  "invalid.email": "Email invalid"
+
+}

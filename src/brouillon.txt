@@ -1,0 +1,3 @@
+البريد الإلكتروني مطلوب   Email is required
+تسجيل الدخول              login
+يُطلب إدخال كلمة المرور  Password is required
