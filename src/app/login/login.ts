@@ -68,13 +68,15 @@ export class Login {
       loginData.password = this.loginForm.get('password')?.value!!
 
 
+      this.router.navigate(['dashboard'])
+      /*
       this.authService.login(loginData).subscribe( data => {
         console.log(data)
         this.router.navigate(['dashboard'])
       }, error => console.log(error) )
     } else {
       this.loginForm.markAllAsTouched();
-    }
+    }    */
   }
 
 }
