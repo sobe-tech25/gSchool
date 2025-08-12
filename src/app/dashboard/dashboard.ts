@@ -21,6 +21,8 @@ import { SidebarComponent } from '../shared/sidebar/sidebar';
 })
 export class Dashboard {
   sidebarOpen = true;
+  ampleHeights: number[] = [];
+  pixelHeights: number[] = [];
 
   statsCards = [
     {
@@ -39,12 +41,16 @@ export class Dashboard {
     }
   ];
 
-  onToggleSidebar() {
-    this.sidebarOpen = !this.sidebarOpen;
+  constructor() {
+    // Pre-calculate random heights to avoid change detection errors
+    for (let i = 0; i < 7; i++) {
+      this.ampleHeights.push(Math.floor(Math.random() * 80) + 20);
+      this.pixelHeights.push(Math.floor(Math.random() * 80) + 20);
+    }
   }
 
-  getRandomHeight(): number {
-    return Math.floor(Math.random() * 80) + 20;
+  onToggleSidebar() {
+    this.sidebarOpen = !this.sidebarOpen;
   }
 
 }

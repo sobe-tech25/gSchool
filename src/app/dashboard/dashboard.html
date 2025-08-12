@@ -56,10 +56,10 @@
             </div>
             <div class="bar-chart">
               <div class="chart-days">
-                <div *ngFor="let day of ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']" class="day-group">
+                <div *ngFor="let day of ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']; let i = index" class="day-group">
                   <div class="bars">
-                    <div class="bar ample-bar" [style.height.px]="getRandomHeight()"></div>
-                    <div class="bar pixel-bar" [style.height.px]="getRandomHeight()"></div>
+                    <div class="bar ample-bar" [style.height.px]="ampleHeights[i]"></div>
+                    <div class="bar pixel-bar" [style.height.px]="pixelHeights[i]"></div>
                   </div>
                   <span class="day-label">{{ day }}</span>
                 </div>
